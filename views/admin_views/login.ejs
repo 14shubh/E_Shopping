@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partial/bootstrap.ejs')%>
+        <link rel="stylesheet" href="/css/adminStyle.css">
+        <script src="/fontawesome/fontawesome.js"></script>
+        <title>
+            <%=title%>
+        </title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-box">
+            <div class="row">
+                <div class="col-md-6 left-side">
+                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            
+                            <div class="carousel-item">
+                                <img class="d-block " src="../images/slide_2.jpg" alt="Second slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block " src="../images/slide_3.jpg" alt="Third slide">
+                            </div>
+                            <div class="carousel-item active">
+                                <img class="d-block " src="../images/slide_4.jpg" alt="Fourth slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block " src="../images/slide_5.jpg" alt="Fifth slide">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 right-side">
+                    <div class="heading">
+                        <h1>Admin Login</h1>
+                    </div>
+                    <form class="form" action="/admin/login" method="POST">
+                        <div class="form-group">
+                            <!-- <label for="email" aria-readonly="true">email</label> -->
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                            <input id="email" name="email" class="form-control" type="text" placeholder="Email" autocomplete="off" required>
+                        </div>
+                        <div class="form-group">
+                            <!-- <label for="password" aria-readonly="true">password</label> -->
+                            <i class="fa fa-unlock" aria-hidden="true"></i>
+                            <input id="password" name="password" class="form-control" type="password" placeholder="password" autocomplete="off" required>
+                        </div>
+
+                        <div class="btn-submit">
+                            <button type="submit" class="sign-in-btn">SignIn</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
