@@ -1,13 +1,15 @@
 const Category = require('../model/category.model');
 
-// exports.indexPage = (req, res, next) => {
-//     res.render('index.ejs', {
-//         title: 'Divine Electronic'
-//     });
-// }
+exports.indexPage = (req, res, next) => {
+    res.render('index.ejs', {
+        title: 'Divine Electronic'
+    });
+}
 
 exports.signinPage = (req, res, next) => {
-    res.render('login')
+    res.render('login',{
+        title:'Sign In'
+    });
 }
 
 exports.signupPage = (req, res, next) => {
