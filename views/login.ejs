@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <%- include('../partial/bootstrap.ejs')%>
+    <title><%=title%></title>
+
+    <%- include('partial/bootstrap.ejs')%>
     <style>
-      .divider:after,
-      .divider:before {
-        content: "";
-        flex: 1;
-        height: 1px;
-        background: #eee;
+      
+      .heading{
+        font-size: 48px;
+        font-weight: 600;
+        text-shadow: 2px 4px 5px rgba(0, 0, 0, 0.5);
       }
     </style>
     <title><%=title%>></title>
   </head>
   <body>
     <section class="vh-100">
+      <div class="heading text-center">
+        <h1>
+            Login
+      </h1>
+    </div>
       <div class="container py-5 h-100">
         <div class="row d-flex align-items-center justify-content-center h-100">
           <div class="col-md-8 col-lg-7 col-xl-6">
@@ -67,7 +70,8 @@
                     Remember me
                   </label>
                 </div>
-                <a href="#!">Forgot password?</a>
+                <a href="/signup" class="mr-1">New account? </a>
+                <a href="#!"> Forgot password?</a>
               </div>
 
               <!-- Submit button -->

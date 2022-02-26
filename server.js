@@ -6,6 +6,7 @@ const session=require('express-session');
 const userRouter = require('./routes/user.route');
 const categoryRouter = require('./routes/category.routes');
 const indexRouter = require('./routes/index.route');
+const productRouter = require('./routes/product.route');
 const fileupload = require('express-fileupload');
 const port = 3001;
 const app = express();
@@ -22,6 +23,7 @@ app.use(fileupload());
 app.use('/admin', adminRouter);
 app.use('/user', userRouter);
 app.use("/category",categoryRouter);
+app.use('/product',productRouter);
 app.use(indexRouter);
 
 app.listen(port, (err) => {
