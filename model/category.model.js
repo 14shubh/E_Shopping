@@ -5,13 +5,13 @@ module.exports = class Category {
         this.categoryImage = categoryImage;
     }
     static fetchAllCategory(){
-        return new Promise((resolve,reject)=>{
+        return new Promise((resolve,reject)=>{  
            pool.getConnection((err,con)=>{
              if(!err){
                let sql = "select * from category";
-               con.query(sql,(err,queryResults)=>{
+               con.query(sql,(err,Results)=>{
                   con.release();
-                  err ? reject(err) : resolve(queryResults);
+                  err ? reject(err) : resolve(Results);
                });
              }
              else 
@@ -24,9 +24,9 @@ module.exports = class Category {
             pool.getConnection((err, con) => {
               if(!err){  
                let sql = "insert into category(category_Name,category_Image) values(?,?)";
-               con.query(sql,[this.categoryName,this.categoryImage],(err,queryResult)=>{
+               con.query(sql,[this.categoryName,this.categoryImage],(err,Result)=>{
                  con.release(); 
-                 err ? reject(err) : resolve(queryResult);
+                 err ? reject(err) : resolve(Result);
                });
               }
               else 
