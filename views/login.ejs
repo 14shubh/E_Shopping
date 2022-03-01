@@ -5,7 +5,12 @@
 
     <%- include('partial/bootstrap.ejs')%>
     <style>
-      
+      *{
+        color: black;
+      }
+      body{
+        background: linear-gradient(to right, rgba(0, 132, 255, 0.5),rgba(157, 204, 248, 0.5));
+      }
       .heading{
         font-size: 48px;
         font-weight: 600;
@@ -31,11 +36,12 @@
             />
           </div>
           <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-            <form>
+            <form action="/signin" method="POST">
               <!-- Email input -->
               <div class="form-outline mb-4">
                 <input
                   type="email"
+                  name="email"
                   id="form1Example13"
                   class="form-control form-control-lg"
                 />
@@ -48,6 +54,7 @@
               <div class="form-outline mb-4">
                 <input
                   type="password"
+                  name="password"
                   id="form1Example23"
                   class="form-control form-control-lg"
                 />
@@ -86,10 +93,10 @@
               <a
                 class="btn btn-primary btn-lg btn-block"
                 style="background-color: #3b5998"
-                href="#!"
+                href="/auth/google"
                 role="button"
               >
-                <i class="fab fa-facebook-f me-2"></i>Continue with Facebook
+                <i class="fab fa-google me-2 mr-5" style="color: #55acee"></i>Continue with Google
               </a>
               <a
                 class="btn btn-primary btn-lg btn-block"
@@ -97,7 +104,7 @@
                 href="#!"
                 role="button"
               >
-                <i class="fab fa-twitter me-2"></i>Continue with Twitter</a
+                <i class="fab fa-twitter me-2 mr-5" style="color: #d6d6d6"></i>Continue with Twitter</a
               >
             </form>
           </div>

@@ -15,38 +15,38 @@
          <a href="#">
             <i class="fa-brands fa-facebook"></i>
         </a>
-         <a href="/signin" class="already">already Register ?</a>
+         <a href="/user/signin" class="already">already Register ?</a>
         </div>
         <div class="form-box">
-          <form action="#" method="post">
+          <form action="/user/signup" method="POST">
             <div class="form-groups">
             <i class="fa-solid fa-user"></i>
-              <input type="text" placeholder="First Name" />
+              <input type="text" name="firstName" placeholder="First Name" />
               <small class="firstNameErr"></small>
             </div>
             <div class="form-groups">
                 <i class="fa-solid fa-user"></i>
-              <input type="text" placeholder="Last Name" />
+              <input type="text" name="lastName" placeholder="Last Name" />
               <small class="lastNameErr"></small>
             </div>
             <div class="form-groups">
                 <i class="fa-solid fa-envelope"></i>
-              <input type="eamil" placeholder="Email" />
+              <input type="eamil" name="email" placeholder="Email" />
               <small class="emailErr"></small>
             </div>
             <div class="form-groups">
                 <i class="fa-solid fa-mobile"></i>
-              <input type="text" placeholder="Mobile number" />
+              <input type="text" name="mobile" placeholder="Mobile number" />
               <small class="mobileErr"></small>
             </div>
             <div class="form-groups">
                 <i class="fa-solid fa-location-dot"></i>
-              <input type="text" placeholder="Pincode" />
+              <input type="text" name="pincode" placeholder="Pincode" />
               <small class="pincodeErr"></small>
             </div>
             <div class="form-groups">
                 <i class="fa-solid fa-location-dot"></i>
-              <input type="text" placeholder="Address" />
+              <input type="text" name="address" placeholder="Address" />
               <small class="addressErr"></small>
             </div>
             <div class="form-group">
@@ -62,12 +62,12 @@
             </div>
             <div class="form-groups">
                 <i class="fa-solid fa-unlock"></i>
-              <input type="password" placeholder="Password" />
+              <input type="password" name="password" placeholder="Password" />
               <small class="passwordErr"></small>
             </div>
             <div class="form-groups">
                 <i class="fa-solid fa-unlock"></i>
-              <input type="password" placeholder="Confirm Password" />
+              <input type="password" name="confirmPassword" placeholder="Confirm Password" />
               <small class="confirmPasswordErr"></small>
             </div>
            

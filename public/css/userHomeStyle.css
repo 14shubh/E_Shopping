@@ -1,0 +1,230 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* Index Page Design style */
+
+i {
+    color: #fff;
+  }
+  .navbar .nav-item {
+    margin-right: 2px;
+  }
+  .navbar .nav-item .nav-link {
+    color: #fff;
+  }
+  .category .navbar .nav-item .nav-link {
+    color: #000;
+  }
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+  
+  body {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    color: #5a5a5a;
+  }
+  
+  .carousel {
+    /* margin-bottom: 4rem; */
+    height: 100vh;
+  }
+  
+  .carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+  }
+  
+  .carousel-item {
+    height: 40rem;
+  }
+  
+  .carousel-item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 32rem;
+    
+  }
+  .category .navbar-nav .nav-item:hover {
+    /* background: #5a5a5a; */
+    transition: 0.4s ease-in-out;
+  
+    /* box-shadow: 0 0 10px rgba(48, 48, 48, 0.5); */
+  }
+  .category .navbar-nav .nav-item .nav-link {
+    font-size: 25px;
+    font-weight: 600;
+    color: rgb(58, 58, 58);
+    margin: 0 20px;
+    position: relative;
+  }
+  .category .navbar-nav .nav-item .nav-link::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+    background: #000;
+    transition: ease-in-out 0.5s;
+  }
+  .category .navbar-nav .nav-item .nav-link:hover::before {
+    width: 100%;
+  }
+  .category .navbar-nav .nav-item .nav-link i {
+    color: #000;
+  }
+  /* .products .card {
+    box-shadow: 0 0 5px rgba(48, 48, 48, 0.5);
+    height: 300px;
+    margin-top: 80px;
+    padding: 10px;
+    border: 3px solid rgb(170, 170, 170);
+  } */
+  
+  .card {
+    max-height: 400px;
+    width: 85%;
+    /* background-color: #5a5a5a; */
+    margin-top: 80px;
+    padding: 20px 20px 10px;
+    border: none;
+    border-right: 1px dotted rgb(187, 187, 187);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  }
+  .card img {
+    height: 210px;
+    width: 100%;
+  }
+  .card a i {
+    color: rgb(51, 51, 51);
+    font-size: 30px;
+    font-weight: 800;
+    display:inline-block;
+    /* margin-left: 70px; */
+    background: none;
+   
+  }
+  .card a .fa-cart-arrow-down{
+    position: absolute;
+    right: 40px;
+    top: 290px;
+  }
+  .card .card-body{
+    padding: 0;
+    margin-top: 15px;
+  }
+  .card .card-body .card-title small{
+    font-size: 14px;
+    margin-left: 15px;
+  }
+  .card a .fa-heart{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 24px;
+  }
+  .card .card-body p {
+    margin-top: 10px;
+   
+  
+  }
+  .card .card-body span small{
+    background: rgb(11, 56, 2);
+    color: #fff;
+    font-size: 10px;
+    padding: 2px 7px;
+    margin-right: 10px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+  }
+  .card .card-body span small i{
+    margin-left: 10px;
+  }
+  .cart-btn{
+      position: absolute;
+      right: 15px;
+      top: 300px;
+      padding: 5px 10px;
+      font-weight: 600;
+      border-radius: 5px;
+      text-align: center;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+      background: transparent;
+      border-color: #b1b1b1;
+      transition: ease-in-out 0.4s;
+      -webkit-transition: ease-in-out 0.4s;
+      -moz-transition: ease-in-out 0.4s;
+      -ms-transition: ease-in-out 0.4s;
+      -o-transition: ease-in-out 0.4s;
+}
+.cart-btn:hover{
+    background-color: rgb(39, 39, 39);
+    color: #fff;
+}
+.cart-btn i{
+    color:rgb(39, 39, 39);
+    transition: ease-in-out 0.4s;
+}
+.cart-btn:hover i{
+    color: #fff;
+}
+  .headingAllProduct h1 span {
+    color: rgb(0, 98, 143);
+  }
+  .headingAllProduct h1 {
+    text-shadow: 2px 4px 5px rgba(48, 48, 48, 0.5);
+    position: relative;
+  }
+  .border {
+   
+    position: absolute;
+    left: 635px;
+    min-width: 250px;
+    height: 5px;
+    background: #000;
+  }
+  
+  .headingAllProduct .border::before {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 5px;
+    background-color: rgb(255, 255, 255);
+    bottom: 0;
+    left: 37%;
+  }
+  .headingAllProduct h1::after {
+    content: "";
+    position: absolute;
+    height: 8px;
+    width: 8px;
+    background: #000;
+    transform: rotate(45deg);
+    top: 58px;
+    left: 740px;
+  }

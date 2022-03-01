@@ -3,13 +3,14 @@
     <head>
         <title><%=title%></title>
         <%- include('../partial/bootstrap.ejs')%>
+        <link rel="stylesheet" href="../css/adminProductStyle.css">
     </head>
     <body>
         <%- include('./admin_partial/navigation_bar.ejs')%>
       <div class="container">
         <form action="/product/add_product" method="POST" enctype="multipart/form-data">
           <div class="form-group">
-            <label>Category</label>
+            <label>Category :</label>
             <select name="categoryId" class="form-control">
                 <option value="0">select category</option>
                 <%for(categories of CategoryList){%>
@@ -18,27 +19,27 @@
             </select>
           </div>
           <div class="form-group">
-              <label>Product Name</label>
+              <label>Product Name :</label>
               <input type="text" name="productName" class="form-control"/>
           </div>
           <div class="form-group">
-            <label>Price</label>
+            <label>Price : </label>
             <input type="text" name="Price" class="form-control"/>
         </div>
         <div class="form-group">
-            <label>Quantity</label>
+            <label>Quantity : </label>
             <input type="number" name="Quantity" class="form-control"/>
         </div>
         <div class="form-group">
-            <label>Description</label>
+            <label>Description :</label>
             <textarea name="Description" class="form-control"></textarea>
         </div>
         <div class="form-group">
-            <label>Upload(Forn, Back, Left, Rigth view)</label>
+            <label>Upload(Front, Back, Left, Rigth views) : </label>
             <br><input type="file" name="productImages" multiple/>
         </div>
         <div class="group">
-            <button class="btn btn-primary" type="submit">Add</button>
+            <button class="btn btn-outline-dark my-3 mb-5" type="submit">Add Product</button>
         </div>
         </form>
       </div>
