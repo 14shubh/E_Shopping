@@ -1,0 +1,85 @@
+<html>
+
+<head>
+    <%-include('../partial/bootstrap.ejs')%>
+        <link rel="stylesheet" href="/css/style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <%- include('admin_partial/navigation_bar.ejs')%>
+        <div class="container-fluid mt-5">
+            <div class="row">
+                <div class="col-12">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>S.no</th>
+                                <th>Name</th>
+                                <th>Image</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Description</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% let sno=1; for(product of productList) { %>
+                                <tr id="row<%=product.id%>">
+                                    <td>
+                                        <%=sno++%>
+                                    </td>
+                                    <td>
+                                        <%=product.product_Name%>
+                                    </td>
+                                    <td>
+                                        
+                                        <img src="/products_images/<%=product.product_Image2%>" width="100px" heigth="100px" />
+                                        
+
+                                    </td>
+                                    
+
+                                    <td>
+                                        <%=product.price%>
+                                    </td>
+                                    <td>
+                                        <%=product.quantity%>
+                                    </td>
+                                    <td>
+                                        <%=product.description%>
+                                    </td>
+                                    <td>
+                                        
+                                        <a href="/product/edit_product/<%=product.id%>">
+                                            <button class="btn btn-primary">Edit</button>
+                                        </a>
+                                        
+                                    </td>
+                                    <td>
+                                        <button onclick="deleteProduct('<%=product.id%>')" id="delete-button"
+                                            class="btn btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                                <%}%>
+                        </tbody>
+                        <script>
+                            function deleteProduct(id) {
+                                if (confirm('Are you sure ?')) {
+                                    $.ajax({
+                                        url: '/product/delete-product/' + id,
+                                        success: function (result) {
+                                            $('#row' + id).remove();
+                                        }
+                                    });
+                                }
+                            }
+                        </script>
+                    </table>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

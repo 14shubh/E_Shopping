@@ -73,6 +73,7 @@ exports.saveProduct  = (request,response,next)=>{
     product.productQty = request.body.Quantity;
     product.productDescription = request.body.Description;
     product.productPrice = request.body.Price;
+    
     product.save()
     .then(result=>{
         return response.redirect("/admin/dashboard");
@@ -82,9 +83,10 @@ exports.saveProduct  = (request,response,next)=>{
         return response.send("Error....");
     });
 }
-exports.add_productPage = (req,res,next)=>{
-    Category.fetchAllCategory().then((results)=>{
-        res.render('admin_views/add_product.ejs',{
+exports.add_productPage = (request,response,next)=>{
+    Category.fetchAllCategory()
+    .then((results)=>{
+        response.render('admin_views/add_product.ejs',{
             title : 'Add Product',
             CategoryList : results
         });
@@ -92,3 +94,56 @@ exports.add_productPage = (req,res,next)=>{
         console.log(err);
     });
 };
+
+exports.productList = (request, response, next) => {
+    Product.fetchALLProduct()
+
+    
+      .then((results) => {
+          console.log(results);
+        response.render('admin_views/product_list.ejs', {
+          productList: results,
+          title:'View Product',
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  
+  exports.updateProduct =  (request,response,next)=>{
+    Product.update()
+     
+      .then(result=>{
+        response.redirect("/admin_views/edit_product.ejs");
+     }).catch(err=>{
+        console.log(err);
+        response.send("Error.....");
+     });
+  };
+  exports.getProductById = (request,response,next)=>{
+    Product.fetchProductById(request.params.productId)
+    .then(result=>{
+      if(result.length>0){
+         response.render('/admin_views/edit_product.ejs',{
+            title:'View-Product',
+            productList: result[0]
+         });
+      }
+    })
+    .catch(err=>{
+       console.log(err);
+    });
+ };
+ exports.deleteProduct = (request,response,next)=>{
+    const pid = request.params.id;
+    Product.delete(pid).then(
+        ()=>{
+          console.log(pid);
+            response.redirect("/product/product_list");
+          // response.send("Product Deleted...");x
+        }
+    ).catch();
+ };
+
+  
